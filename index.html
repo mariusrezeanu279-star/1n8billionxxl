@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1N8BillionXXL — The Ultimate Size Queen Fantasy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #e6c44d;
+            --gold-dark: #b8940a;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px var(--gold-glow); }
+            50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.7); }
+            100% { box-shadow: 0 0 15px var(--gold-glow); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        #ageGate {
+            position: fixed; inset: 0; z-index: 9999;
+            background: radial-gradient(circle at center, #1a1308, var(--bg-dark) 90%);
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column; text-align: center; padding: 2rem;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+            backdrop-filter: blur(10px);
+        }
+        #ageGate.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        #ageGate .crown-wrap { animation: float 4s ease-in-out infinite; margin-bottom: 1.5rem; }
+        #ageGate h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 0.1em; color: var(--gold); text-shadow: 0 0 30px var(--gold-glow); }
+        #ageGate p { max-width: 500px; margin: 1rem auto 2.5rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
+        #ageGate .enter-btn {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--bg-dark); padding: 1.2rem 4.5rem;
+            border-radius: 50px; font-weight: 700; font-size: 1.2rem;
+            transition: all 0.3s ease; border: none; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 0.15em;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        #ageGate .enter-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px var(--gold-glow); }
+
+        #navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1rem 2rem; background: rgba(10,10,10,0.7);
+            backdrop-filter: blur(15px); border-bottom: 1px solid rgba(212,175,55,0.1);
+            display: flex; justify-content: space-between; align-items: center;
+            transition: padding 0.3s ease;
+        }
+        #navbar .logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.6rem; color: var(--gold); letter-spacing: 0.05em; text-decoration: none; }
+        #navbar .nav-links { display: flex; gap: 2.5rem; align-items: center; list-style: none; }
+        #navbar .nav-links a { color: #ddd; text-decoration: none; font-size: 0.85rem; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+        #navbar .nav-links a:hover { color: var(--gold); }
+        #navbar .nav-cta { background: var(--gold) !important; color: var(--bg-dark) !important; padding: 0.6rem 1.8rem; border-radius: 50px; }
+        #navbar .nav-cta:hover { background: var(--gold-light) !important; transform: scale(1.05); }
+        #navToggle { display: none; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
+        
+        @media (max-width: 768px) {
+            #navbar .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,10,10,0.98); padding: 2rem; gap: 2rem; border-bottom: 1px solid rgba(212,175,55,0.2); }
+            #navbar .nav-links.open { display: flex; animation: slideDown 0.3s ease forwards; }
+            #navToggle { display: block; }
+        }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        #hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; position: relative; padding: 6rem 2rem 2rem;
+            background: radial-gradient(circle at center 30%, #2a1f0c, var(--bg-dark) 70%); 
+        }
+        #hero::after { content: ''; position: absolute; inset: 0; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>'); pointer-events: none; }
+        #hero .hero-content { position: relative; z-index: 2; max-width: 1000px; }
+        #hero .hero-crown { animation: float 5s ease-in-out infinite; margin-bottom: 1.5rem; }
+        #hero h1 { 
+            font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 6.5rem); 
+            font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 1.5rem; 
+            background: linear-gradient(to right, #fff, var(--gold), #fff);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+        }
+        #hero .subhead { font-size: clamp(1rem, 2.5vw, 1.5rem); color: var(--gold-light); font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 1rem; }
+        #hero .tagline { font-size: 1.2rem; color: #ccc; max-width: 650px; margin: 0 auto 3rem; line-height: 1.6; }
+        #hero .tagline span { color: var(--gold); font-weight: 700; font-size: 1.3rem; }
+        
+        .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--bg-dark); padding: 1.2rem 3.5rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; text-transform: uppercase; letter-spacing: 0.1em; border: none; cursor: pointer; text-decoration: none; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px var(--gold-glow); }
+        .btn-secondary { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 1.2rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; display: inline-block; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; backdrop-filter: blur(5px); }
+        .btn-secondary:hover { border-color: var(--gold); color: var(--gold); background: rgba(212,175,55,0.05); }
+        .hero-cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 1rem; }
+
+        section { padding: 8rem 2rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; color: var(--gold); text-align: center; margin-bottom: 1.5rem; }
+        .section-sub { text-align: center; max-width: 700px; margin: 0 auto 4rem; color: var(--text-muted); font-size: 1.2rem; line-height: 1.6; }
+
+        #chamber { background: var(--bg-dark); position: relative; border-top: 1px solid rgba(212,175,55,0.1); }
+        .chamber-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .chamber-image { border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.8); aspect-ratio: 4/5; position: relative; border: 1px solid rgba(212,175,55,0.2); }
+        .chamber-image::after { content:''; position:absolute; inset:0; box-shadow: inset 0 0 50px rgba(0,0,0,0.5); pointer-events:none; }
+        .chamber-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.7s ease; }
+        .chamber-image:hover img { transform: scale(1.05); }
+        .chamber-text h3 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1; }
+        .chamber-text h3 span { color: var(--gold); font-style: italic; }
+        .chamber-text p { color: #bbb; line-height: 1.8; font-size: 1.1rem; margin-bottom: 1.5rem; }
+        .chamber-stats { display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
+        .chamber-stats .stat { background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); flex: 1; min-width: 140px; text-align: center; transition: transform 0.3s; }
+        .chamber-stats .stat:hover { transform: translateY(-5px); border-color: rgba(212,175,55,0.3); }
+        .chamber-stats .stat .number { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); font-weight: 800; margin-bottom: 0.5rem; line-height: 1; }
+        .chamber-stats .stat .label { color: #888; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+        @media (max-width: 900px) { .chamber-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+        #gallery { background: #0f0f0f; border-top: 1px solid rgba(212,175,55,0.1); }
+        .masonry-grid { column-count: 4; column-gap: 1.5rem; max-width: 1600px; margin: 0 auto; }
+        .masonry-grid .item { break-inside: avoid; margin-bottom: 1.5rem; border-radius: 16px; overflow: hidden; position: relative; background: #1a1a1a; cursor: crosshair; }
+        .masonry-grid .item img { width: 100%; display: block; object-fit: cover; transition: transform 0.5s ease, filter 0.5s ease; filter: brightness(0.85); }
+        .masonry-grid .item:hover img { transform: scale(1.08); filter: brightness(1.1); }
+        .masonry-grid .item .overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s ease; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem 1.5rem; }
+        .masonry-grid .item:hover .overlay { opacity: 1; }
+        .masonry-grid .item .overlay h4 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.3rem; transform: translateY(10px); transition: transform 0.3s ease; }
+        .masonry-grid .item .overlay p { font-size: 0.9rem; color: #ccc; transform: translateY(10px); transition: transform 0.3s ease 0.1s; }
+        .masonry-grid .item:hover .overlay h4, .masonry-grid .item:hover .overlay p { transform: translateY(0); }
+        .gallery-cta { text-align: center; margin-top: 4rem; }
+        .btn-video { background: transparent; border: 2px solid var(--gold); color: var(--gold); padding: 1rem 3rem; border-radius: 50px; font-weight: 700; transition: all 0.3s ease; cursor: pointer; display: inline-flex; align-items: center; gap: 1rem; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .btn-video:hover { background: var(--gold); color: var(--bg-dark); box-shadow: 0 10px 30px var(--gold-glow); transform: translateY(-3px); }
+        .btn-video svg { fill: currentColor; width: 24px; height: 24px; }
+        @media (max-width: 1200px) { .masonry-grid { column-count: 3; } }
+        @media (max-width: 800px) { .masonry-grid { column-count: 2; } }
+        @media (max-width: 500px) { .masonry-grid { column-count: 1; } }
+
+        #funnel { background: var(--bg-dark); position: relative; border-top: 1px solid rgba(212,175,55,0.1); }
+        .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; max-width: 1200px; margin: 0 auto; align-items: center; }
+        .tier-card { background: var(--bg-card); border-radius: 32px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s ease; position: relative; text-align: left; display: flex; flex-direction: column; }
+        .tier-card:hover { transform: translateY(-10px); border-color: rgba(212,175,55,0.4); box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+        .tier-card.featured { border-color: var(--gold); background: linear-gradient(160deg, #1f1709, var(--bg-card)); box-shadow: 0 0 40px rgba(212,175,55,0.15); transform: scale(1.05); z-index: 2; }
+        .tier-card.featured:hover { transform: scale(1.05) translateY(-10px); box-shadow: 0 20px 60px rgba(212,175,55,0.3); }
+        .tier-card .tier-name { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); margin-bottom: 0.5rem; }
+        .tier-card .tier-price { font-size: 3.5rem; font-weight: 800; margin: 1rem 0; color: #fff; letter-spacing: -0.03em; }
+        .tier-card .tier-price small { font-size: 1.2rem; font-weight: 400; color: #666; }
+        .tier-card .tier-desc { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem; line-height: 1.5; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 2rem; }
+        .tier-card ul { list-style: none; padding: 0; margin: 0 0 2.5rem; flex-grow: 1; }
+        .tier-card ul li { padding: 0.6rem 0; color: #ddd; font-size: 1rem; display: flex; align-items: flex-start; gap: 1rem; }
+        .tier-card ul li svg { color: var(--gold); width: 1.2rem; height: 1.2rem; flex-shrink: 0; fill: var(--gold); margin-top: 3px; }
+        .tier-card .btn-tier { background: rgba(255,255,255,0.05); color: #fff; padding: 1.2rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border: 1px solid rgba(255,255,255,0.1); cursor: pointer; transition: all 0.3s ease; width: 100%; font-size: 1rem; }
+        .tier-card .btn-tier:hover { background: var(--gold); color: var(--bg-dark); border-color: var(--gold); }
+        .tier-card.featured .btn-tier { background: var(--gold); color: var(--bg-dark); border: none; }
+        .tier-card.featured .btn-tier:hover { background: #fff; box-shadow: 0 0 20px rgba(255,255,255,0.4); }
+        .tier-card .badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--bg-dark); font-size: 0.75rem; font-weight: 800; padding: 0.4rem 1.5rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.15em; animation: pulseGlow 2s infinite; white-space: nowrap; }
+        @media (max-width: 968px) { .tier-grid { grid-template-columns: 1fr; max-width: 450px; } .tier-card.featured { transform: scale(1); } .tier-card.featured:hover { transform: translateY(-10px); } }
+
+        #final-cta { background: linear-gradient(to bottom, var(--bg-dark), #1a1308); padding: 8rem 2rem; text-align: center; border-top: 1px solid rgba(212,175,55,0.1); }
+        #final-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 5.5rem); color: var(--gold); margin-bottom: 1.5rem; line-height: 1.1; }
+        #final-cta p { color: #bbb; max-width: 600px; margin: 0 auto 3rem; font-size: 1.3rem; line-height: 1.6; }
+
+        footer { background: #050505; padding: 4rem 2rem; text-align: center; color: #444; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.03); }
+        footer a { color: #666; text-decoration: none; margin: 0 0.8rem; transition: color 0.2s; }
+        footer a:hover { color: var(--gold); }
+
+        .modal-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.95); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 1rem; backdrop-filter: blur(10px); }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-box { background: var(--bg-card); border-radius: 24px; max-width: 900px; width: 100%; padding: 2.5rem; position: relative; border: 1px solid rgba(212,175,55,0.2); box-shadow: 0 30px 100px rgba(0,0,0,1); max-height: 95vh; overflow-y: auto; transform: scale(0.95); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .modal-overlay.active .modal-box { transform: scale(1); }
+        .modal-close { position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.1); border: none; color: #fff; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; z-index: 10; }
+        .modal-close:hover { background: var(--gold); color: var(--bg-dark); transform: rotate(90deg); }
+        
+        .modal-box video { width: 100%; border-radius: 12px; background: #000; margin-top: 1.5rem; outline: none; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        .modal-box .modal-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem; }
+        .modal-box .modal-desc { color: #aaa; margin-bottom: 2rem; font-size: 1.1rem; }
+        
+        .video-selector { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .video-selector button { background: #1a1a1a; border: 1px solid #333; color: #ccc; padding: 0.6rem 1.2rem; border-radius: 50px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .video-selector button:hover, .video-selector button.active { border-color: var(--gold); color: var(--gold); background: rgba(212,175,55,0.1); box-shadow: 0 0 15px rgba(212,175,55,0.2); }
+        
+        .modal-box .form-group { margin-bottom: 1.5rem; }
+        .modal-box .form-group label { display: block; color: var(--gold); margin-bottom: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+        .modal-box .form-group input, .modal-box .form-group textarea { width: 100%; padding: 1.2rem; border-radius: 12px; border: 1px solid #333; background: #0a0a0a; color: #fff; font-size: 1rem; transition: all 0.3s; font-family: 'Inter', sans-serif; }
+        .modal-box .form-group input:focus, .modal-box .form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 15px rgba(212,175,55,0.2); background: #111; }
+        .modal-box .form-group textarea { min-height: 150px; resize: vertical; }
+        .modal-box .btn-submit { background: var(--gold); color: var(--bg-dark); padding: 1.2rem 2rem; border: none; border-radius: 50px; font-weight: 800; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease; width: 100%; text-transform: uppercase; letter-spacing: 0.1em; }
+        .modal-box .btn-submit:hover { background: #fff; box-shadow: 0 10px 30px rgba(255,255,255,0.2); transform: translateY(-2px); }
+
+        .reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="ageGate">
+    <div class="crown-wrap">
+        <svg viewBox="0 0 100 75" width="100" height="75" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 25px rgba(212,175,55,0.8))">
+            <polygon points="5,68 18,22 38,48 50,5 62,48 82,22 95,68" fill="#D4AF37" stroke="#b8940a" stroke-width="1.5" stroke-linejoin="round"/>
+            <rect x="4" y="65" width="92" height="10" rx="4" fill="#D4AF37"/>
+            <circle cx="5" cy="22" r="5" fill="#D4AF37"/>
+            <circle cx="50" cy="5" r="5" fill="#D4AF37"/>
+            <circle cx="95" cy="22" r="5" fill="#D4AF37"/>
+        </svg>
+    </div>
+    <h1>1N8BillionXXL</h1>
+    <p>Enter the realm of the Ultimate Size Queen.<br />You must be 18+ to proceed.</p>
+    <button class="enter-btn" id="enterSite">Surrender</button>
+</div>
+
+<nav id="navbar">
+    <a href="#" class="logo">1N8BillionXXL</a>
+    <button id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#chamber">The Queen</a></li>
+        <li><a href="#gallery">The Gallery</a></li>
+        <li><a href="#funnel">Devotion</a></li>
+        <li><a href="#final-cta" class="nav-cta">Enter the Throne</a></li>
+    </ul>
+</nav>
+
+<section id="hero">
+    <div class="hero-content">
+        <div class="hero-crown">
+            <svg viewBox="0 0 100 75" width="120" height="90" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 35px rgba(212,175,55,0.6))">
+                <polygon points="5,68 18,22 38,48 50,5 62,48 82,22 95,68" fill="#D4AF37" stroke="#b8940a" stroke-width="1.5" stroke-linejoin="round"/>
+                <rect x="4" y="65" width="92" height="10" rx="4" fill="#D4AF37"/>
+                <circle cx="5" cy="22" r="5" fill="#D4AF37"/>
+                <circle cx="50" cy="5" r="5" fill="#D4AF37"/>
+                <circle cx="95" cy="22" r="5" fill="#D4AF37"/>
+            </svg>
+        </div>
+        <h1>THE ULTIMATE<br />SIZE QUEEN FANTASY</h1>
+        <div class="subhead">She is curves. She is power. She is your obsession.</div>
+        <p class="tagline"><span>60cm</span> of absolute devotion. Exclusive. Commanding.<br />Not everyone is ready to serve the Queen.</p>
+        <div class="hero-cta-group">
+            <a href="#gallery" class="btn-primary">View the Archives</a>
+            <button class="btn-secondary" id="openVideoModal">Watch the Teaser</button>
+        </div>
+    </div>
+</section>
+
+<section id="chamber">
+    <div class="section-title reveal">The Queen's Chamber</div>
+    <p class="section-sub reveal">She does not beg. She chooses. Only the worthy may kneel before her throne.</p>
+    <div class="chamber-grid">
+        <div class="chamber-image reveal">
+            <img src="assets/IMB_pGfUbe.jpeg" alt="The Queen on her golden throne" onerror="this.src='https://via.placeholder.com/800x1000/141414/D4AF37?text=Queen+Awaits'" />
+        </div>
+        <div class="chamber-text reveal">
+            <h3>She is the <span>Obsession</span></h3>
+            <p>With her golden crown and sheer black lace, she commands the room. Her curves, wide hips, a prominent behind, and natural beauty are a testament to power and desire. She is not a fantasy for the faint-hearted; she is a queen who demands total devotion.</p>
+            <p>Every glance, every whisper, every inch of her presence is designed to captivate. Those who enter her realm must prove their worth before they are allowed to stay.</p>
+            <div class="chamber-stats">
+                <div class="stat"><div class="number">60cm</div><div class="label">Of Obsession</div></div>
+                <div class="stat"><div class="number">&#8734;</div><div class="label">Devoted Subjects</div></div>
+                <div class="stat"><div class="number">&#128081;</div><div class="label">Royal Standard</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <div class="section-title reveal">The Royal Gallery</div>
+    <p class="section-sub reveal">A vast collection of the Queen's most artistic and powerful poses. Each image is a testament to her reign.</p>
+    
+    <div class="masonry-grid" id="galleryGrid">
+        </div>
+
+    <div class="gallery-cta reveal">
+        <button class="btn-video" id="openVideoModal2">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            Watch the Cinematic Teaser
+        </button>
+    </div>
+</section>
+
+<section id="funnel">
+    <div class="section-title reveal">The Path of Devotion</div>
+    <p class="section-sub reveal">Choose your level of obsession. Each tier brings you closer to the Queen's inner circle.</p>
+    <div class="tier-grid">
+        
+        <div class="tier-card reveal">
+            <div class="tier-name">The Gaze</div>
+            <div class="tier-price">$29 <small>/mo</small></div>
+            <div class="tier-desc">For the curious who wish to admire from afar. A taste of the royal lifestyle.</div>
+            <ul>
+                <li><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg> Access to the Royal Gallery</li>
+                <li><svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z"/></svg> Monthly teaser video</li>
+                <li><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> Weekly newsletter</li>
+            </ul>
+            <button class="btn-tier">Begin the Gaze</button>
+        </div>
+
+        <div class="tier-card featured reveal">
+            <span class="badge">Most Obsessed</span>
+            <div class="tier-name">The Worship</div>
+            <div class="tier-price">$79 <small>/mo</small></div>
+            <div class="tier-desc">Full devotion. Exclusive uncensored content. Direct access to the Queen.</div>
+            <ul>
+                <li><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg> Everything in The Gaze</li>
+                <li><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> Full private gallery</li>
+                <li><svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg> Monthly private live chat</li>
+                <li><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Custom video request (monthly)</li>
+                <li><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg> Queen's personal thank-you</li>
+            </ul>
+            <button class="btn-tier">Worship the Queen</button>
+        </div>
+
+        <div class="tier-card reveal">
+            <div class="tier-name">Private Audience</div>
+            <div class="tier-price">Custom</div>
+            <div class="tier-desc">For the truly devoted. One-on-one with the Queen on her terms.</div>
+            <ul>
+                <li><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg> Everything in The Worship</li>
+                <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg> Private video call</li>
+                <li><svg viewBox="0 0 24 24"><path d="M20 7h-4V5a3 3 0 0 0-6 0v2H6a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8a1 1 0 0 0-1-1z"/></svg> Personalized content</li>
+                <li><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg> Unlimited custom requests</li>
+            </ul>
+            <button class="btn-tier" id="openPrivateModal">Request Audience</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="final-cta">
+    <h2 class="reveal">The Throne Awaits Its Queen</h2>
+    <p class="reveal">Are you ready to surrender to the ultimate fantasy?<br />Join the realm of the Size Queen and embrace your obsession today.</p>
+    <a href="#gallery" class="btn-primary reveal" style="padding: 1.5rem 4rem; font-size: 1.3rem;">Enter the Throne Room</a>
+</section>
+
+<footer>
+    <p>&copy; 2026 1N8BillionXXL. All models 18+. Pure fantasy. This is an adult fantasy brand; all content is artistic and consensual.</p>
+    <p style="margin-top:1rem;">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact Support</a>
+    </p>
+</footer>
+
+<div class="modal-overlay" id="videoModal">
+    <div class="modal-box">
+        <button class="modal-close" id="closeVideoModal">&times;</button>
+        <h3 class="modal-title">The Queen's Teaser</h3>
+        <p class="modal-desc">Choose a cinematic glimpse into the world of 1N8BillionXXL.</p>
+        
+        <div class="video-selector" id="videoSelector">
+            </div>
+
+        <video id="modalVideo" controls preload="metadata">
+            </video>
+    </div>
+</div>
+
+<div class="modal-overlay" id="privateModal">
+    <div class="modal-box" style="max-width: 600px;">
+        <button class="modal-close" id="closePrivateModal">&times;</button>
+        <h3 class="modal-title">Request Audience</h3>
+        <p class="modal-desc">Tell the Queen what you desire. Only the truly devoted will be considered for a private audience.</p>
+        <form id="privateForm">
+            <div class="form-group">
+                <label for="nameInput">Your Name / Handle</label>
+                <input type="text" id="nameInput" placeholder="e.g., DevotedSubject_88" required />
+            </div>
+            <div class="form-group">
+                <label for="fantasy">Your Fantasy / Request</label>
+                <textarea id="fantasy" placeholder="Describe your deepest desire to serve the Queen..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Submit to the Queen</button>
+        </form>
+    </div>
+</div>
+
+<script>
+(function () {
+    'use strict';
+
+    const ageGate = document.getElementById('ageGate');
+    const enterBtn = document.getElementById('enterSite');
+    
+    document.body.style.overflow = 'hidden';
+    
+    enterBtn.addEventListener('click', function () {
+        ageGate.classList.add('hidden');
+        document.body.style.overflow = '';
+        setTimeout(() => handleScroll(), 100);
+    });
+
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', function () { 
+        navLinks.classList.toggle('open'); 
+    });
+    document.querySelectorAll('#navLinks a').forEach(function (link) {
+        link.addEventListener('click', function () { 
+            navLinks.classList.remove('open'); 
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            nav.style.padding = '0.5rem 2rem';
+            nav.style.background = 'rgba(5,5,5,0.95)';
+        } else {
+            nav.style.padding = '1rem 2rem';
+            nav.style.background = 'rgba(10,10,10,0.7)';
+        }
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    function handleScroll() {
+        reveals.forEach(function (el) {
+            const elementTop = el.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (elementTop < windowHeight - 50) {
+                el.classList.add('visible');
+            }
+        });
+    }
+    window.addEventListener('scroll', handleScroll);
+
+    const imageFiles = [
+        "download (1).jpeg", "download (2).jpeg", "download (3).jpeg", "download (4).jpeg", 
+        "download (5).jpeg", "download (6).jpeg", "download (7).jpeg", "download (8).jpeg", 
+        "download (9).jpeg", "download (10).jpeg", "download (11).jpeg", "download (12).jpeg", 
+        "download (13).jpeg", "download (14).jpeg", "download (15).jpeg", "download (16).jpeg", 
+        "download (17).jpeg", "download (18).jpeg", "download (19).jpeg", "download (20).jpeg", 
+        "download (21).jpeg", "download (22).jpeg", "download (23).jpeg", "download.jpeg",
+        "Gemini_Generated_Image_4owsm04owsm04ows.png",
+        "image (3).jpg", "image (4).jpg", "image (5).jpg", "image (6).jpg", "image (7).jpg", 
+        "image (9).jpg", "image (12).jpg", "image (15).jpg",
+        "IMB_pGfUbe.jpeg", "IMG_9082.jpeg", "IMG_9095.jpeg", "IMG_9096.jpeg",
+        "0d915181-59f6-4678-894b-6d63ab13fb2f.jpeg", "1d0297e1-83ca-4bb6-962e-74d557d0b486.jpg", 
+        "7b4ed8d5-6b95-4e67-9f38-d2be957492e7.jpeg", "a5624d0f-855d-43b4-a9d3-949b820da6ed.jpeg", 
+        "ae6f6af2-7ae0-4d36-84c2-f8c945ab9c70.jpg", "att.BH-TFeP3G5AtDpbPN1yZ01CraXjqOKASdzy7mYNf-7M.jpeg", 
+        "b0649c0c-744f-4ff3-8657-758901f68f4f_thumbnail.jpg", "content.jpg"
+    ];
+
+    const galleryGrid = document.getElementById('galleryGrid');
+    
+    imageFiles.forEach((file, idx) => {
+        const item = document.createElement('div');
+        item.className = 'item reveal';
+        // Encode only the filename to ensure Windows local paths with spaces load correctly
+        const imgPath = "assets/" + encodeURIComponent(file);
+        
+        item.innerHTML = `
+            <img src="${imgPath}" alt="Queen Archives ${idx + 1}" loading="lazy" onerror="this.closest('.item').style.display='none';" />
+            <div class="overlay">
+                <h4>Royal Archives</h4>
+                <p>Pose #${idx + 101}</p>
+            </div>
+        `;
+        galleryGrid.appendChild(item);
+    });
+
+    const videoFiles = [
+        { name: "Teaser 1", path: "assets/_imagine-public_share-videos_80158b0b-91f0-4280-aea0-4aa033b82f2a_hd.mp4" },
+        { name: "Teaser 2", path: "assets/_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_1c87693a-0450-4610-bb42-92fb98eecf24_generated_video.mp4" },
+        { name: "Teaser 3", path: "assets/_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_9567dd05-2c17-46bd-9fcf-1b22a5d238f1_generated_video.mp4" },
+        { name: "Teaser 4", path: "assets/7a7e2efe-01d1-4e48-b979-28d60449a5c7.mp4" }
+    ];
+
+    const videoModal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const videoSelector = document.getElementById('videoSelector');
+
+    videoSelector.innerHTML = '';
+
+    videoFiles.forEach((vid, index) => {
+        const btn = document.createElement('button');
+        btn.textContent = vid.name;
+        if (index === 0) btn.classList.add('active');
+        
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.video-selector button').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Re-encode to safely bypass spaces in paths on local machines
+            modalVideo.src = encodeURI(vid.path);
+            modalVideo.load();
+            modalVideo.play().catch(e => console.log("Playback error: ", e));
+        });
+        videoSelector.appendChild(btn);
+    });
+
+    function openVideo() { 
+        videoModal.classList.add('active'); 
+        document.body.style.overflow = 'hidden'; 
+        
+        if (!modalVideo.src || modalVideo.src.endsWith(window.location.pathname)) {
+            modalVideo.src = encodeURI(videoFiles[0].path);
+        }
+        
+        modalVideo.load(); 
+        let playPromise = modalVideo.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(error => console.log("Autoplay blocked."));
+        }
+    }
+    
+    function closeVideo() { 
+        videoModal.classList.remove('active'); 
+        document.body.style.overflow = ''; 
+        modalVideo.pause(); 
+    }
+    
+    document.getElementById('openVideoModal').addEventListener('click', openVideo);
+    document.getElementById('openVideoModal2').addEventListener('click', openVideo);
+    document.getElementById('closeVideoModal').addEventListener('click', closeVideo);
+    videoModal.addEventListener('click', function (e) { if (e.target === this) closeVideo(); });
+
+    const privateModal = document.getElementById('privateModal');
+    
+    function openPrivate() { 
+        privateModal.classList.add('active'); 
+        document.body.style.overflow = 'hidden'; 
+    }
+    
+    function closePrivate() { 
+        privateModal.classList.remove('active'); 
+        document.body.style.overflow = ''; 
+    }
+    
+    document.getElementById('openPrivateModal').addEventListener('click', openPrivate);
+    document.getElementById('closePrivateModal').addEventListener('click', closePrivate);
+    privateModal.addEventListener('click', function (e) { if (e.target === this) closePrivate(); });
+    
+    document.getElementById('privateForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Your request has been submitted. The Queen will evaluate your devotion.');
+        closePrivate(); 
+        this.reset();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { 
+            if (videoModal.classList.contains('active')) closeVideo(); 
+            if (privateModal.classList.contains('active')) closePrivate(); 
+        }
+    });
+
+    document.querySelectorAll('.btn-tier:not(#openPrivateModal)').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const tier = this.closest('.tier-card').querySelector('.tier-name').textContent.trim();
+            alert(`You have chosen "${tier}". Prepare your tribute.`);
+        });
+    });
+
+})();
+</script>
+</body>
+</html>
