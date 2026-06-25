@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1N8BillionXXL — The Ultimate Size Queen Fantasy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #fff; overflow-x: hidden; }
+        #ageGate { position: fixed; inset: 0; z-index: 9999; background: radial-gradient(circle at center, #1a1308, #0a0a0a 90%); display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 2rem; transition: opacity 0.8s ease, visibility 0.8s ease; }
+        #ageGate.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        #ageGate .crown-wrap { margin-bottom: 1.5rem; }
+        #ageGate h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 10vw, 5rem); letter-spacing: 0.1em; color: #D4AF37; }
+        #ageGate p { max-width: 500px; margin: 1rem auto 2rem; color: #a0a0a0; font-size: 1.1rem; }
+        #ageGate .enter-btn { background: #D4AF37; color: #0a0a0a; padding: 1rem 4rem; border-radius: 50px; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Inter', sans-serif; }
+        #ageGate .enter-btn:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(212,175,55,0.6); }
+        #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(212,175,55,0.15); display: flex; justify-content: space-between; align-items: center; }
+        #navbar .logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; color: #D4AF37; letter-spacing: 0.05em; text-decoration: none; }
+        #navbar .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+        #navbar .nav-links a { color: #ccc; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; text-transform: uppercase; letter-spacing: 0.08em; }
+        #navbar .nav-links a:hover { color: #D4AF37; }
+        #navbar .nav-cta { background: #D4AF37; color: #0a0a0a; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; text-transform: uppercase; }
+        #navbar .nav-cta:hover { background: #e6c44d; }
+        #navToggle { display: none; background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; line-height: 1; padding: 0; }
+        @media (max-width: 768px) { #navbar .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,10,10,0.97); padding: 2rem; gap: 1.5rem; border-bottom: 1px solid rgba(212,175,55,0.2); } #navbar .nav-links.open { display: flex; } #navToggle { display: block; } }
+        #hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 2rem; background: radial-gradient(circle at 30% 40%, #2a1f0c, #0a0a0a 80%); overflow: hidden; }
+        #hero .hero-content { position: relative; z-index: 2; max-width: 900px; }
+        #hero .hero-crown { margin-bottom: 1.5rem; }
+        #hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 12vw, 6rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1rem; color: #D4AF37; }
+        #hero .subhead { font-size: clamp(1.2rem, 3vw, 1.8rem); color: #e0d5b0; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; }
+        #hero .tagline { font-size: 1.1rem; color: #aaa; max-width: 600px; margin: 1rem auto 2.5rem; }
+        #hero .tagline span { color: #D4AF37; }
+        .btn-primary { background: #D4AF37; color: #0a0a0a; padding: 1rem 3rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; text-transform: uppercase; letter-spacing: 0.1em; border: none; cursor: pointer; text-decoration: none; font-family: 'Inter', sans-serif; }
+        .btn-primary:hover { background: #e6c44d; transform: scale(1.03); box-shadow: 0 0 40px rgba(212,175,55,0.4); }
+        .btn-secondary { background: transparent; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; display: inline-block; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .btn-secondary:hover { border-color: #D4AF37; color: #D4AF37; background: rgba(212,175,55,0.1); }
+        .hero-cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1rem; }
+        section { padding: 5rem 2rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; color: #D4AF37; text-align: center; margin-bottom: 2rem; }
+        .section-sub { text-align: center; max-width: 700px; margin: 0 auto 3rem; color: #bbb; font-size: 1.1rem; }
+        #chamber { background: #0a0a0a; }
+        .chamber-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .chamber-image { border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.8); aspect-ratio: 4/5; }
+        .chamber-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .chamber-text h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #D4AF37; margin-bottom: 1rem; }
+        .chamber-text p { color: #ccc; line-height: 1.8; font-size: 1.05rem; margin-bottom: 1.5rem; }
+        .chamber-stats { display: flex; gap: 3rem; margin-top: 2rem; }
+        .chamber-stats .stat .number { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #D4AF37; font-weight: 700; }
+        .chamber-stats .stat .label { color: #888; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
+        @media (max-width: 768px) { .chamber-grid { grid-template-columns: 1fr; gap: 2rem; } .chamber-stats { justify-content: space-around; } }
+        #gallery { background: #0f0f0f; }
+        .masonry-grid { column-count: 3; column-gap: 1.5rem; max-width: 1400px; margin: 0 auto; }
+        .masonry-grid .item { break-inside: avoid; margin-bottom: 1.5rem; border-radius: 16px; overflow: hidden; position: relative; background: #1a1a1a; transition: transform 0.3s ease; }
+        .masonry-grid .item:hover { transform: scale(1.02); z-index: 5; }
+        .masonry-grid .item img { width: 100%; display: block; object-fit: cover; }
+        .masonry-grid .item .overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1.5rem; background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%); opacity: 0; transition: opacity 0.3s ease; }
+        .masonry-grid .item:hover .overlay { opacity: 1; }
+        .masonry-grid .item .overlay h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #D4AF37; margin-bottom: 0.2rem; }
+        .masonry-grid .item .overlay p { font-size: 0.85rem; color: #ccc; }
+        .gallery-cta { text-align: center; margin-top: 3rem; }
+        .btn-video { background: transparent; border: 2px solid #D4AF37; color: #D4AF37; padding: 0.8rem 2.5rem; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; display: inline-flex; align-items: center; gap: 0.8rem; font-size: 1rem; font-family: 'Inter', sans-serif; }
+        .btn-video:hover { background: #D4AF37; color: #0a0a0a; box-shadow: 0 0 30px rgba(212,175,55,0.3); }
+        .btn-video svg { fill: currentColor; }
+        @media (max-width: 1024px) { .masonry-grid { column-count: 2; } }
+        @media (max-width: 600px) { .masonry-grid { column-count: 1; } }
+        #funnel { background: #0a0a0a; }
+        .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .tier-card { background: #141414; border-radius: 24px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; position: relative; text-align: center; display: flex; flex-direction: column; }
+        .tier-card:hover { transform: translateY(-8px); border-color: #D4AF37; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+        .tier-card.featured { border-color: #D4AF37; background: linear-gradient(145deg, #1a1308, #141414); box-shadow: 0 0 40px rgba(212,175,55,0.15); }
+        .tier-card .tier-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #D4AF37; margin-bottom: 0.3rem; }
+        .tier-card .tier-price { font-size: 2.8rem; font-weight: 700; margin: 1rem 0; color: #fff; }
+        .tier-card .tier-price small { font-size: 1rem; font-weight: 300; color: #888; }
+        .tier-card .tier-desc { color: #aaa; margin-bottom: 1.5rem; flex-grow: 1; }
+        .tier-card ul { list-style: none; padding: 0; margin: 0 0 2rem; text-align: left; }
+        .tier-card ul li { padding: 0.4rem 0; color: #ccc; font-size: 0.95rem; display: flex; align-items: center; gap: 0.6rem; }
+        .tier-card ul li svg { width: 1rem; height: 1rem; flex-shrink: 0; fill: #D4AF37; }
+        .tier-card .btn-tier { background: #D4AF37; color: #0a0a0a; padding: 0.8rem; border-radius: 50px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border: none; cursor: pointer; transition: all 0.3s ease; width: 100%; font-size: 0.95rem; font-family: 'Inter', sans-serif; }
+        .tier-card .btn-tier:hover { background: #e6c44d; transform: scale(1.02); }
+        .tier-card.featured .btn-tier { background: #fff; }
+        .tier-card.featured .btn-tier:hover { background: #D4AF37; }
+        .tier-card .badge { position: absolute; top: -12px; right: 20px; background: #D4AF37; color: #0a0a0a; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 1rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.1em; }
+        @media (max-width: 768px) { .tier-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } }
+        #final-cta { background: radial-gradient(circle at center, #1a1308, #0a0a0a 80%); padding: 6rem 2rem; text-align: center; border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2); }
+        #final-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 7vw, 5rem); color: #D4AF37; margin-bottom: 1rem; }
+        #final-cta p { color: #bbb; max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.2rem; }
+        footer { background: #0a0a0a; padding: 3rem 2rem; text-align: center; color: #555; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer a { color: #888; text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { color: #D4AF37; }
+        .modal-overlay { position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; padding: 2rem; backdrop-filter: blur(6px); }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-box { background: #141414; border-radius: 32px; max-width: 800px; width: 100%; padding: 2rem; position: relative; border: 1px solid rgba(212,175,55,0.2); box-shadow: 0 30px 80px rgba(0,0,0,0.8); max-height: 90vh; overflow-y: auto; }
+        .modal-close { position: absolute; top: 1rem; right: 1.5rem; background: none; border: none; color: #888; font-size: 2rem; cursor: pointer; line-height: 1; padding: 0; }
+        .modal-close:hover { color: #fff; }
+        .modal-box video { width: 100%; border-radius: 16px; background: #000; margin-top: 1rem; }
+        .modal-box .modal-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: #D4AF37; margin-bottom: 0.5rem; }
+        .modal-box .modal-desc { color: #ccc; margin-bottom: 1.5rem; }
+        .video-selector { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .video-selector button { background: #1a1a1a; border: 1px solid #333; color: #ccc; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+        .video-selector button:hover, .video-selector button.active { border-color: #D4AF37; color: #D4AF37; background: rgba(212,175,55,0.1); }
+        .modal-box .form-group { margin-bottom: 1.2rem; }
+        .modal-box .form-group label { display: block; color: #aaa; margin-bottom: 0.3rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .modal-box .form-group input, .modal-box .form-group textarea { width: 100%; padding: 0.8rem 1rem; border-radius: 12px; border: 1px solid #333; background: #0a0a0a; color: #fff; font-size: 1rem; transition: border 0.2s; font-family: 'Inter', sans-serif; }
+        .modal-box .form-group input:focus, .modal-box .form-group textarea:focus { outline: none; border-color: #D4AF37; }
+        .modal-box .form-group textarea { min-height: 120px; resize: vertical; }
+        .modal-box .btn-submit { background: #D4AF37; color: #0a0a0a; padding: 0.8rem 2rem; border: none; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; width: 100%; font-family: 'Inter', sans-serif; }
+        .modal-box .btn-submit:hover { background: #e6c44d; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+<div id="ageGate">
+    <div class="crown-wrap"><svg viewBox="0 0 100 75" width="90" height="68" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 20px rgba(212,175,55,0.6))"><polygon points="5,68 18,22 38,48 50,5 62,48 82,22 95,68" fill="#D4AF37" stroke="#b8940a" stroke-width="1.5" stroke-linejoin="round"/><rect x="4" y="65" width="92" height="10" rx="4" fill="#D4AF37"/><circle cx="5" cy="22" r="5" fill="#D4AF37"/><circle cx="50" cy="5" r="5" fill="#D4AF37"/><circle cx="95" cy="22" r="5" fill="#D4AF37"/></svg></div>
+    <h1>1N8BillionXXL</h1>
+    <p>Enter the realm of the Ultimate Size Queen.<br />You must be 18+ to proceed.</p>
+    <button class="enter-btn" id="enterSite">Enter the Throne</button>
+</div>
+<nav id="navbar">
+    <a href="#" class="logo">1N8BillionXXL</a>
+    <button id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#chamber">The Queen</a></li>
+        <li><a href="#gallery">The Gallery</a></li>
+        <li><a href="#funnel">Devotion</a></li>
+        <li><a href="#final-cta" class="nav-cta">Enter the Throne</a></li>
+    </ul>
+</nav>
+<section id="hero">
+    <div class="hero-content">
+        <div class="hero-crown"><svg viewBox="0 0 100 75" width="100" height="75" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 28px rgba(212,175,55,0.5))"><polygon points="5,68 18,22 38,48 50,5 62,48 82,22 95,68" fill="#D4AF37" stroke="#b8940a" stroke-width="1.5" stroke-linejoin="round"/><rect x="4" y="65" width="92" height="10" rx="4" fill="#D4AF37"/><circle cx="5" cy="22" r="5" fill="#D4AF37"/><circle cx="50" cy="5" r="5" fill="#D4AF37"/><circle cx="95" cy="22" r="5" fill="#D4AF37"/></svg></div>
+        <h1>THE ULTIMATE<br />SIZE QUEEN FANTASY</h1>
+        <div class="subhead">She is curves. She is power. She is your obsession.</div>
+        <p class="tagline"><span>60cm</span> of devotion. Exclusive. Commanding.<br />Not everyone is ready for the Queen.</p>
+        <div class="hero-cta-group">
+            <a href="#gallery" class="btn-primary">Enter the Throne Room</a>
+            <button class="btn-secondary" id="openVideoModal">Watch the Queen's Teaser</button>
+        </div>
+    </div>
+</section>
+<section id="chamber">
+    <div class="section-title">The Queen's Chamber</div>
+    <p class="section-sub">She does not beg. She chooses. Only the worthy may kneel before her throne.</p>
+    <div class="chamber-grid">
+        <div class="chamber-image reveal"><img src="IMB_pGfUbe.jpeg" alt="The Queen on her golden throne" /></div>
+        <div class="chamber-text reveal">
+            <h3>She is the Obsession</h3>
+            <p>With her golden crown and sheer black lace, she commands the room. Her curves — wide hips, a prominent behind, and natural, unapologetic beauty — are a testament to power and desire. She is not a fantasy for the faint-hearted; she is a queen who demands devotion.</p>
+            <p>Every glance, every whisper, every inch of her 60cm presence is designed to captivate. Those who enter her realm must prove their worth.</p>
+            <div class="chamber-stats">
+                <div class="stat"><div class="number">60cm</div><div class="label">Of Obsession</div></div>
+                <div class="stat"><div class="number">&#8734;</div><div class="label">Devoted Subjects</div></div>
+                <div class="stat"><div class="number">&#128081;</div><div class="label">The Queen's Standard</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="gallery">
+    <div class="section-title">The Royal Gallery</div>
+    <p class="section-sub">Artistic glimpses of the Queen — each pose a declaration of power.</p>
+    <div class="masonry-grid" id="galleryGrid"></div>
+    <div class="gallery-cta">
+        <button class="btn-video" id="openVideoModal2"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8 5v14l11-7z"/></svg> Watch the Cinematic Teaser</button>
+    </div>
+</section>
+<section id="funnel">
+    <div class="section-title">The Path of Devotion</div>
+    <p class="section-sub">Choose your level of obsession. Each tier brings you closer to the Queen's inner circle.</p>
+    <div class="tier-grid">
+        <div class="tier-card reveal">
+            <div class="tier-name">The Gaze</div>
+            <div class="tier-price">$29 <small>/mo</small></div>
+            <div class="tier-desc">For the curious who wish to admire from afar.</div>
+            <ul><li>Access to the Royal Gallery</li><li>Monthly teaser video</li><li>Weekly newsletter</li></ul>
+            <button class="btn-tier">Begin the Gaze</button>
+        </div>
+        <div class="tier-card featured reveal">
+            <span class="badge">Most Obsessed</span>
+            <div class="tier-name">The Worship</div>
+            <div class="tier-price">$79 <small>/mo</small></div>
+            <div class="tier-desc">Full devotion. Exclusive content. Direct access.</div>
+            <ul><li>Everything in The Gaze</li><li>Full private gallery</li><li>Monthly private live chat</li><li>Custom video request (monthly)</li><li>Queen's personal thank-you</li></ul>
+            <button class="btn-tier">Worship the Queen</button>
+        </div>
+        <div class="tier-card reveal">
+            <div class="tier-name">Private Audience</div>
+            <div class="tier-price">Custom</div>
+            <div class="tier-desc">For the truly devoted. One-on-one with the Queen.</div>
+            <ul><li>Everything in The Worship</li><li>Private video call</li><li>Personalized content</li><li>Unlimited custom requests</li></ul>
+            <button class="btn-tier" id="openPrivateModal">Request Audience</button>
+        </div>
+    </div>
+</section>
+<section id="final-cta">
+    <h2>The Throne Awaits Its Queen</h2>
+    <p>Are you ready to surrender to the ultimate fantasy?<br />Join the realm of the Size Queen and embrace your obsession.</p>
+    <a href="#gallery" class="btn-primary">Enter the Throne Room</a>
+</section>
+<footer>
+    <p>&copy; 2026 1N8BillionXXL. All models 18+. Pure fantasy. This is an adult fantasy brand; all content is artistic and consensual.</p>
+    <p style="margin-top:0.5rem;"><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact</a></p>
+</footer>
+<div class="modal-overlay" id="videoModal">
+    <div class="modal-box">
+        <button class="modal-close" id="closeVideoModal">&times;</button>
+        <h3 class="modal-title">The Queen's Teaser</h3>
+        <p class="modal-desc">Choose a cinematic glimpse into the world of 1N8BillionXXL.</p>
+        <div class="video-selector" id="videoSelector"></div>
+        <video id="modalVideo" controls preload="metadata"></video>
+    </div>
+</div>
+<div class="modal-overlay" id="privateModal">
+    <div class="modal-box" style="max-width:600px;">
+        <button class="modal-close" id="closePrivateModal">&times;</button>
+        <h3 class="modal-title">Request Private Audience</h3>
+        <p class="modal-desc">Tell the Queen what you desire. Only the most devoted will be granted an audience.</p>
+        <form id="privateForm">
+            <div class="form-group"><label for="nameInput">Your Name / Handle</label><input type="text" id="nameInput" placeholder="e.g., DevotedSubject_88" required /></div>
+            <div class="form-group"><label for="fantasy">Your Fantasy / Request</label><textarea id="fantasy" placeholder="Describe your deepest desire for the Queen..." required></textarea></div>
+            <button type="submit" class="btn-submit">Send to the Queen</button>
+        </form>
+    </div>
+</div>
+<script>
+(function () {
+    'use strict';
+
+    var galleryImages = [{"src": "0d915181-59f6-4678-894b-6d63ab13fb2f.jpeg", "alt": "Royal Presence", "title": "Royal Presence", "desc": "A glimpse of devotion"}, {"src": "1d0297e1-83ca-4bb6-962e-74d557d0b486.jpg", "alt": "Golden Hour", "title": "Golden Hour", "desc": "Captured in candlelight"}, {"src": "7b4ed8d5-6b95-4e67-9f38-d2be957492e7.jpeg", "alt": "The Reveal", "title": "The Reveal", "desc": "Power on display"}, {"src": "Gemini_Generated_Image_4owsm04owsm04ows.png", "alt": "Obsession Grows", "title": "Obsession Grows", "desc": "Every angle, every curve"}, {"src": "IMG_9082.jpeg", "alt": "Commanding View", "title": "Commanding View", "desc": "Wide hips, sheer lace"}, {"src": "IMG_9095.jpeg", "alt": "Throne Pose", "title": "Throne Pose", "desc": "Elegance and power"}, {"src": "IMG_9096.jpeg", "alt": "Curves Unleashed", "title": "Curves Unleashed", "desc": "Natural and unapologetic"}, {"src": "a5624d0f-855d-43b4-a9d3-949b820da6ed.jpeg", "alt": "Throne Room", "title": "Throne Room", "desc": "Where she reigns"}, {"src": "ae6f6af2-7ae0-4d36-84c2-f8c945ab9c70.jpg", "alt": "Devoted Gaze", "title": "Devoted Gaze", "desc": "Worth every glance"}, {"src": "att.BH-TFeP3G5AtDpbPN1yZ01CraXjqOKASdzy7mYNf-7M.jpeg", "alt": "Lace & Luxury", "title": "Lace & Luxury", "desc": "Intimate detail"}, {"src": "b0649c0c-744f-4ff3-8657-758901f68f4f_thumbnail.jpg", "alt": "Royal Decree", "title": "Royal Decree", "desc": "She commands attention"}, {"src": "content.jpg", "alt": "Velvet & Gold", "title": "Velvet & Gold", "desc": "Texture of luxury"}, {"src": "download (1).jpeg", "alt": "Inner Sanctum", "title": "Inner Sanctum", "desc": "Reserved for the worthy"}, {"src": "download (10).jpeg", "alt": "The Standard", "title": "The Standard", "desc": "Setting the bar"}, {"src": "download (11).jpeg", "alt": "Royal Presence", "title": "Royal Presence", "desc": "A glimpse of devotion"}, {"src": "download (12).jpeg", "alt": "Golden Hour", "title": "Golden Hour", "desc": "Captured in candlelight"}, {"src": "download (13).jpeg", "alt": "The Reveal", "title": "The Reveal", "desc": "Power on display"}, {"src": "download (14).jpeg", "alt": "Obsession Grows", "title": "Obsession Grows", "desc": "Every angle, every curve"}, {"src": "download (15).jpeg", "alt": "Throne Room", "title": "Throne Room", "desc": "Where she reigns"}, {"src": "download (16).jpeg", "alt": "Devoted Gaze", "title": "Devoted Gaze", "desc": "Worth every glance"}, {"src": "download (17).jpeg", "alt": "Royal Decree", "title": "Royal Decree", "desc": "She commands attention"}, {"src": "download (18).jpeg", "alt": "Velvet & Gold", "title": "Velvet & Gold", "desc": "Texture of luxury"}, {"src": "download (19).jpeg", "alt": "Inner Sanctum", "title": "Inner Sanctum", "desc": "Reserved for the worthy"}, {"src": "download (2).jpeg", "alt": "The Standard", "title": "The Standard", "desc": "Setting the bar"}, {"src": "download (20).jpeg", "alt": "Royal Presence", "title": "Royal Presence", "desc": "A glimpse of devotion"}, {"src": "download (21).jpeg", "alt": "Golden Hour", "title": "Golden Hour", "desc": "Captured in candlelight"}, {"src": "download (22).jpeg", "alt": "The Reveal", "title": "The Reveal", "desc": "Power on display"}, {"src": "download (23).jpeg", "alt": "Obsession Grows", "title": "Obsession Grows", "desc": "Every angle, every curve"}, {"src": "download (3).jpeg", "alt": "Throne Room", "title": "Throne Room", "desc": "Where she reigns"}, {"src": "download (4).jpeg", "alt": "Devoted Gaze", "title": "Devoted Gaze", "desc": "Worth every glance"}, {"src": "download (5).jpeg", "alt": "Royal Decree", "title": "Royal Decree", "desc": "She commands attention"}, {"src": "download (6).jpeg", "alt": "Velvet & Gold", "title": "Velvet & Gold", "desc": "Texture of luxury"}, {"src": "download (7).jpeg", "alt": "Inner Sanctum", "title": "Inner Sanctum", "desc": "Reserved for the worthy"}, {"src": "download (8).jpeg", "alt": "The Standard", "title": "The Standard", "desc": "Setting the bar"}, {"src": "download (9).jpeg", "alt": "Royal Presence", "title": "Royal Presence", "desc": "A glimpse of devotion"}, {"src": "download.jpeg", "alt": "Golden Hour", "title": "Golden Hour", "desc": "Captured in candlelight"}, {"src": "image (12).jpg", "alt": "The Reveal", "title": "The Reveal", "desc": "Power on display"}, {"src": "image (15).jpg", "alt": "Obsession Grows", "title": "Obsession Grows", "desc": "Every angle, every curve"}, {"src": "image (3).jpg", "alt": "Throne Room", "title": "Throne Room", "desc": "Where she reigns"}, {"src": "image (4).jpg", "alt": "Devoted Gaze", "title": "Devoted Gaze", "desc": "Worth every glance"}, {"src": "image (5).jpg", "alt": "Royal Decree", "title": "Royal Decree", "desc": "She commands attention"}, {"src": "image (6).jpg", "alt": "Velvet & Gold", "title": "Velvet & Gold", "desc": "Texture of luxury"}, {"src": "image (7).jpg", "alt": "Inner Sanctum", "title": "Inner Sanctum", "desc": "Reserved for the worthy"}, {"src": "image (9).jpg", "alt": "The Standard", "title": "The Standard", "desc": "Setting the bar"}, {"src": "IMG_9069.png", "alt": "Side Profile", "title": "Side Profile", "desc": "Silhouette of obsession"}, {"src": "IMG_9070.png", "alt": "Royal Crown", "title": "Royal Crown", "desc": "Golden symbol of authority"}];
+
+    var videos = [{"label": "Teaser 1", "src": "_imagine-public_share-videos_80158b0b-91f0-4280-aea0-4aa033b82f2a_hd.mp4"}, {"label": "Teaser 2", "src": "_users_390a09e6-a063-4385-ad04-8931d821def6_generated_18bbabdc-5838-4564-8ac1-b7287617cce4_generated_video.mp4"}, {"label": "Teaser 3", "src": "_users_390a09e6-a063-4385-ad04-8931d821def6_generated_2bda3b48-d053-4ba4-ad79-933f25ea2b6d_generated_video.mp4"}, {"label": "Teaser 4", "src": "_users_390a09e6-a063-4385-ad04-8931d821def6_generated_d0b8d768-814a-486d-8932-e99ffc4e495e_generated_video.mp4"}, {"label": "Teaser 5", "src": "_users_390a09e6-a063-4385-ad04-8931d821def6_generated_f8510350-acc9-4539-93cd-a5db4e68e80c_generated_video.mp4"}, {"label": "Teaser 6", "src": "_users_390a09e6-a063-4385-ad04-8931d821def6_generated_fb1b2a4f-125d-4c3a-a030-2a07af14a0e6_generated_video.mp4"}, {"label": "Teaser 7", "src": "_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_0206e42a-9442-4459-a08a-83957836eaf3_generated_video.mp4"}, {"label": "Teaser 8", "src": "_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_1c87693a-0450-4610-bb42-92fb98eecf24_generated_video.mp4"}, {"label": "Teaser 9", "src": "_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_35952b42-d6db-4295-8b7c-89a3f55f92e2_generated_video.mp4"}, {"label": "Teaser 10", "src": "_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_50921c78-1794-4d15-b1b4-54e02d660e0e_generated_video.mp4"}, {"label": "Teaser 11", "src": "_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_51117051-e089-4762-8572-8d2f1456d6e8_generated_video.mp4"}, {"label": "Teaser 12", "src": "_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_79d436d4-6903-4f36-9b99-a525108d483e_generated_video.mp4"}, {"label": "Teaser 13", "src": "_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_9567dd05-2c17-46bd-9fcf-1b22a5d238f1_generated_video.mp4"}, {"label": "Teaser 14", "src": "_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_9876ea6e-8ecc-4a6f-8b0e-27136e47cebb_generated_video.mp4"}, {"label": "Teaser 15", "src": "_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_b72c2b00-cc8f-44aa-98bb-9240ba2af604_generated_video.mp4"}, {"label": "Teaser 16", "src": "_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_dd6812da-06ff-4c64-be9d-825d729a0000_generated_video.mp4"}, {"label": "Teaser 17", "src": "_users_f23ac748-38ab-4b27-ac6c-172a8ed83d16_generated_f954f53f-dff9-457d-93b5-3943da32db55_generated_video.mp4"}, {"label": "Teaser 18", "src": "gemini_generated_video_FF6FCCA4.mp4"}];
+
+    var galleryGrid = document.getElementById('galleryGrid');
+    galleryImages.forEach(function (img) {
+        var div = document.createElement('div');
+        div.className = 'item reveal';
+        div.innerHTML = '<img src="' + img.src + '" alt="' + img.alt + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'"><div class="overlay"><h4>' + img.title + '</h4><p>' + img.desc + '</p></div>';
+        galleryGrid.appendChild(div);
+    });
+
+    var videoSelector = document.getElementById('videoSelector');
+    var modalVideo = document.getElementById('modalVideo');
+    videos.forEach(function (v, i) {
+        var btn = document.createElement('button');
+        btn.textContent = v.label;
+        btn.dataset.src = v.src;
+        if (i === 0) btn.classList.add('active');
+        btn.addEventListener('click', function () {
+            document.querySelectorAll('.video-selector button').forEach(function (b) { b.classList.remove('active'); });
+            this.classList.add('active');
+            modalVideo.src = this.dataset.src;
+            modalVideo.load();
+            modalVideo.play().catch(function () {});
+        });
+        videoSelector.appendChild(btn);
+    });
+    if (videos.length) { modalVideo.src = videos[0].src; }
+
+    document.getElementById('enterSite').addEventListener('click', function () {
+        document.getElementById('ageGate').classList.add('hidden');
+    });
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', function () { navLinks.classList.toggle('open'); });
+    document.querySelectorAll('#navLinks a').forEach(function (link) { link.addEventListener('click', function () { navLinks.classList.remove('open'); }); });
+    var reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+        reveals.forEach(function (el) { obs.observe(el); });
+    } else { reveals.forEach(function (el) { el.classList.add('visible'); }); }
+    var videoModal = document.getElementById('videoModal');
+    function openVideo() { videoModal.classList.add('active'); document.body.style.overflow = 'hidden'; modalVideo.load(); modalVideo.play().catch(function () {}); }
+    function closeVideo() { videoModal.classList.remove('active'); document.body.style.overflow = ''; modalVideo.pause(); }
+    document.getElementById('openVideoModal').addEventListener('click', openVideo);
+    document.getElementById('openVideoModal2').addEventListener('click', openVideo);
+    document.getElementById('closeVideoModal').addEventListener('click', closeVideo);
+    videoModal.addEventListener('click', function (e) { if (e.target === this) closeVideo(); });
+    var privateModal = document.getElementById('privateModal');
+    function openPrivate() { privateModal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closePrivate() { privateModal.classList.remove('active'); document.body.style.overflow = ''; }
+    document.getElementById('openPrivateModal').addEventListener('click', openPrivate);
+    document.getElementById('closePrivateModal').addEventListener('click', closePrivate);
+    privateModal.addEventListener('click', function (e) { if (e.target === this) closePrivate(); });
+    document.getElementById('privateForm').addEventListener('submit', function (e) { e.preventDefault(); alert('Your request has been sent to the Queen. She will consider your devotion.'); closePrivate(); this.reset(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (videoModal.classList.contains('active')) closeVideo(); if (privateModal.classList.contains('active')) closePrivate(); } });
+    document.querySelectorAll('.btn-tier:not(#openPrivateModal)').forEach(function (btn) { btn.addEventListener('click', function () { var tier = this.closest('.tier-card').querySelector('.tier-name').textContent.trim(); alert('You have chosen "' + tier + '". Prepare for devotion.'); }); });
+    var navCta = document.querySelector('.nav-cta');
+    if (navCta) { navCta.addEventListener('click', function (e) { e.preventDefault(); document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' }); }); }
+})();
+</script>
+</body>
+</html>
