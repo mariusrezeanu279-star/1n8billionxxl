@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1N8BillionXXL — The Ultimate Size Queen Fantasy | Faceless Throne Devotion</title>
+    <meta name="description" content="Enter the realm of the Ultimate Size Queen. 60cm of devotion. Faceless. Anonymous. High-production couple content. Slow reveal storytelling. Only the worthy kneel.">
+    <meta property="og:title" content="1N8BillionXXL — The Ultimate Size Queen Fantasy">
+    <meta property="og:description" content="60cm of devotion. The King & Queen of the Throne. Faceless couple content. Slow storytelling. Exclusive devotion tiers.">
+    <meta property="og:image" content="https://picsum.photos/id/1011/1200/630">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500&amp;display=swap');
+        
+        :root {
+            --gold: #D4AF37;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: -0.025em;
+        }
+
+        .throne-bg {
+            background-color: #0A0A0A;
+            background-image: 
+                radial-gradient(circle at 25% 30%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 75% 70%, rgba(212, 175, 55, 0.04) 0%, transparent 60%);
+        }
+
+        .gold-text {
+            color: #D4AF37;
+        }
+
+        .luxury-card {
+            background: #111111;
+            border: 1px solid #222222;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .luxury-card:hover {
+            border-color: #D4AF37;
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, #D4AF37, transparent);
+        }
+
+        .gallery-img {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .gallery-card:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            animation: modalPop 0.3s ease-out forwards;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .devotion-tier {
+            transition: all 0.3s ease;
+        }
+        
+        .devotion-tier.popular {
+            border-color: #D4AF37;
+            position: relative;
+        }
+        
+        .devotion-tier.popular:before {
+            content: 'MOST OBSESSED';
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: #D4AF37;
+            color: #0A0A0A;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 14px;
+            border-radius: 9999px;
+            letter-spacing: 0.5px;
+        }
+
+        .story-log {
+            border-left: 3px solid #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-[#0A0A0A] text-[#E5E5E5] throne-bg">
+    <!-- AGE GATE MODAL -->
+    <div id="ageGate" class="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center">
+        <div class="max-w-md mx-auto px-8 text-center">
+            <div class="mb-8">
+                <i class="fas fa-crown text-6xl gold-text mb-4"></i>
+                <h1 class="heading-serif text-5xl font-bold tracking-tighter">1N8BillionXXL</h1>
+                <p class="text-[#D4AF37] mt-1 tracking-[3px] text-sm">THE ULTIMATE SIZE QUEEN FANTASY</p>
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-xl mb-2">You must be 18+ to enter the Throne Room.</p>
+                <p class="text-sm text-[#888]">Faceless. Anonymous. Consensual. High production.</p>
+            </div>
+
+            <div class="space-y-4">
+                <button onclick="enterThrone()" 
+                        class="w-full py-4 px-8 bg-[#D4AF37] hover:bg-[#C5A02E] text-[#0A0A0A] font-bold text-lg rounded-xl flex items-center justify-center gap-3 transition-all active:scale-[0.985]">
+                    <span>I AM WORTHY. ENTER THE THRONE.</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                
+                <button onclick="window.location.href='https://www.google.com'" 
+                        class="w-full py-3 text-sm text-[#666] hover:text-[#999] transition-colors">
+                    I am under 18 — Leave now
+                </button>
+            </div>
+            
+            <p class="mt-8 text-[10px] text-[#555]">By entering you confirm you are 18+ and consent to viewing adult fantasy content between adults only.</p>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-crown text-3xl gold-text"></i>
+                <div>
+                    <div class="font-bold tracking-tighter text-2xl">1N8BillionXXL</div>
+                    <div class="text-[10px] text-[#D4AF37] -mt-1 tracking-[2px]">THE THRONE</div>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm">
+                <a href="#journal" class="nav-link hover:text-[#D4AF37] transition-colors">The King's Journal</a>
+                <a href="#gallery" class="nav-link hover:text-[#D4AF37] transition-colors">The Royal Gallery</a>
+                <a href="#tiers" class="nav-link hover:text-[#D4AF37] transition-colors">Path of Devotion</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button onclick="showTeaserModal()" 
+                        class="px-5 py-2.5 text-sm border border-white/30 hover:bg-white/5 rounded-xl flex items-center gap-2 transition-all">
+                    <i class="fas fa-play mr-1"></i> 
+                    <span class="hidden sm:inline">Watch Teaser</span>
+                </button>
+                <a href="#tiers" 
+                   class="px-6 py-2.5 bg-[#D4AF37] hover:bg-[#C5A02E] text-[#0A0A0A] text-sm font-bold rounded-xl flex items-center gap-2 transition-all">
+                    ENTER THE REALM
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="relative min-h-[100dvh] flex items-center justify-center pt-16 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(#222_0.8px,transparent_1px)] bg-[length:4px_4px]"></div>
+        
+        <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 mb-6 text-sm">
+                <div class="w-2 h-2 bg-[#D4AF37] rounded-full animate-pulse"></div>
+                <span>FACeless • ANONYMOUS • COUPLE ONLY</span>
+            </div>
+            
+            <h1 class="heading-serif text-7xl md:text-8xl font-bold tracking-tighter leading-none mb-4">
+                60cm of<br>Devotion
+            </h1>
+            <p class="max-w-md mx-auto text-2xl text-[#D4AF37] mb-8">The King &amp; Queen of the Throne</p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onclick="document.getElementById('journal').scrollIntoView({ behavior: 'smooth' })" 
+                        class="group px-10 py-4 border-2 border-white/60 hover:bg-white hover:text-[#0A0A0A] font-medium rounded-2xl flex items-center justify-center gap-3 transition-all text-lg">
+                    <span>BEGIN THE JOURNEY</span>
+                </button>
+                
+                <button onclick="showTeaserModal()" 
+                        class="px-8 py-4 bg-white/10 hover:bg-white/15 border border-white/30 rounded-2xl flex items-center justify-center gap-3 transition-all text-lg">
+                    <i class="fas fa-play"></i>
+                    <span>WATCH THE QUEEN'S TEASER</span>
+                </button>
+            </div>
+            
+            <div class="mt-12 text-xs tracking-[2px] text-[#666]">SCROLL TO ENTER THE REALM ↓</div>
+        </div>
+        
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center text-xs text-[#555]">
+            <div>THE STORY UNFOLDS SLOWLY</div>
+        </div>
+    </header>
+
+    <!-- THE QUEEN'S CHAMBER + OBSESSION -->
+    <section class="max-w-5xl mx-auto px-6 py-16 border-b border-white/10">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="uppercase tracking-[3px] text-xs gold-text mb-3">THE REALM</div>
+                <h2 class="heading-serif text-6xl font-bold tracking-tighter leading-none">She does not beg.<br>She chooses.</h2>
+            </div>
+            <div class="text-lg text-[#CCC]">
+                <p class="mb-6">Only the worthy may kneel before her throne. With her golden crown and sheer black lace, she commands the room. Her curves — wide hips, a prominent presence, and natural, unapologetic power — are a testament to devotion and desire.</p>
+                <p>She is not a fantasy for the faint-hearted. She is the Queen who demands proof of worth. Every glance, every whisper, every inch of the 60cm presence is designed to captivate those who prove themselves worthy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE KING'S JOURNAL (SLOW STORYTELLING) -->
+    <section id="journal" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <div class="uppercase tracking-[3px] text-xs gold-text mb-2">THE SLOW REVEAL</div>
+            <h2 class="heading-serif text-6xl font-bold tracking-tighter">The King's Journal</h2>
+            <p class="max-w-md mx-auto mt-3 text-[#AAA]">The real story. The growth. The public eyes. The Queen who rules beside me. Released slowly, as it should be.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Log 1 -->
+            <div class="luxury-card p-8 rounded-3xl story-log">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="px-3 py-1 text-xs rounded-full bg-white/10">CHAPTER I • THE AWAKENING</div>
+                </div>
+                <h3 class="font-semibold text-2xl mb-3">It started growing… and it never stopped.</h3>
+                <p class="text-[#CCC] mb-6">"About a year ago everything changed. I woke up one morning and it was bigger. Not a little bigger — noticeably. Week after week. Now it’s completely out of control. This is the reality we’re living with."</p>
+                <div class="flex items-center gap-3 text-sm">
+                    <button onclick="playAudioLog(1)" class="flex items-center gap-2 text-[#D4AF37] hover:text-[#C5A02E]">
+                        <i class="fas fa-headphones"></i> <span>Listen to Audio Log</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Log 2 -->
+            <div class="luxury-card p-8 rounded-3xl story-log">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="px-3 py-1 text-xs rounded-full bg-white/10">CHAPTER II • PUBLIC EYES</div>
+                </div>
+                <h3 class="font-semibold text-2xl mb-3">Supermarket offers. Street stares. This is our new normal.</h3>
+                <p class="text-[#CCC] mb-6">"Walking down the street used to be normal. Now people stare. Yesterday in the supermarket a woman literally stopped me and offered cash on the spot. My Queen was with me. She squeezed my hand and we just kept walking."</p>
+                <div class="flex items-center gap-3 text-sm">
+                    <button onclick="playAudioLog(2)" class="flex items-center gap-2 text-[#D4AF37] hover:text-[#C5A02E]">
+                        <i class="fas fa-headphones"></i> <span>Listen to Audio Log</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-8">
+            <a href="#tiers" class="inline-flex items-center gap-2 text-sm px-6 py-3 border border-white/30 rounded-2xl hover:bg-white/5 transition-all">
+                READ THE FULL JOURNAL IN THE WORSHIP TIER <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- THE QUEEN'S PERSPECTIVE -->
+    <section class="max-w-5xl mx-auto px-6 py-16 border-y border-white/10 bg-[#111]">
+        <div class="max-w-2xl">
+            <div class="uppercase tracking-[3px] text-xs gold-text mb-2">FROM THE THRONE BESIDE HIM</div>
+            <h2 class="heading-serif text-5xl font-bold tracking-tighter mb-6">The Queen’s Perspective</h2>
+            
+            <div class="space-y-6 text-lg text-[#CCC]">
+                <p>"I never expected this. The shock when it started happening. The way our life changed overnight. The constant attention when we go out together. But I’ve chosen my role — I am the one who protects him, who worships him, who rules beside the 60cm presence that now defines our world."</p>
+                <p class="italic">"He is the King. I am the Queen who guards the throne. This is our story. And we are telling it slowly, on our terms."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE ROYAL GALLERY (INTERACTIVE) -->
+    <section id="gallery" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+            <div>
+                <div class="uppercase tracking-[3px] text-xs gold-text mb-2">VISUAL WORSHIP</div>
+                <h2 class="heading-serif text-6xl font-bold tracking-tighter">The Royal Gallery</h2>
+            </div>
+            
+            <!-- Filters -->
+            <div class="flex flex-wrap gap-2" id="gallery-filters">
+                <button onclick="filterGallery('all')" class="active-filter px-5 py-2 text-sm rounded-2xl border border-white/30 hover:border-white transition-all">All</button>
+                <button onclick="filterGallery('measurement')" class="px-5 py-2 text-sm rounded-2xl border border-white/30 hover:border-white transition-all">Measurement Tease</button>
+                <button onclick="filterGallery('couple')" class="px-5 py-2 text-sm rounded-2xl border border-white/30 hover:border-white transition-all">Couple Dynamic</button>
+                <button onclick="filterGallery('throne')" class="px-5 py-2 text-sm rounded-2xl border border-white/30 hover:border-white transition-all">Throne Power</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="gallery-grid">
+            <!-- Populated by JS -->
+        </div>
+        
+        <div class="text-center mt-10 text-sm text-[#666]">
+            More exclusive angles, reactions, and full couple scenes available in higher devotion tiers.
+        </div>
+    </section>
+
+    <!-- PATH OF DEVOTION (TIERS) -->
+    <section id="tiers" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <div class="uppercase tracking-[3px] text-xs gold-text mb-2">THE PATH OF DEVOTION</div>
+            <h2 class="heading-serif text-6xl font-bold tracking-tighter">Choose Your Level of Worship</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Gaze -->
+            <div class="luxury-card p-8 rounded-3xl flex flex-col">
+                <div>
+                    <div class="text-sm uppercase tracking-widest text-[#D4AF37]">THE GAZE</div>
+                    <div class="mt-2 flex items-baseline gap-1">
+                        <span class="text-5xl font-bold">$29</span>
+                        <span class="text-[#888]">/mo</span>
+                    </div>
+                </div>
+                <ul class="mt-8 space-y-3 flex-1 text-sm">
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Access to The Royal Gallery</li>
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Monthly teaser video drops</li>
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Weekly private newsletter</li>
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Early access to new story logs</li>
+                </ul>
+                <button onclick="selectTier('Gaze', 29)" 
+                        class="mt-8 w-full py-4 border border-white/60 hover:bg-white hover:text-[#0A0A0A] font-medium rounded-2xl transition-all">
+                    BEGIN THE GAZE
+                </button>
+            </div>
+
+            <!-- Worship (Popular) -->
+            <div class="luxury-card p-8 rounded-3xl flex flex-col devotion-tier popular border-[#D4AF37]">
+                <div>
+                    <div class="text-sm uppercase tracking-widest text-[#D4AF37]">THE WORSHIP</div>
+                    <div class="mt-2 flex items-baseline gap-1">
+                        <span class="text-5xl font-bold">$79</span>
+                        <span class="text-[#888]">/mo</span>
+                    </div>
+                </div>
+                <ul class="mt-8 space-y-3 flex-1 text-sm">
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Everything in The Gaze</li>
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Full private gallery access</li>
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Monthly private live chat with the Queen</li>
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> One custom video request per month</li>
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Queen’s personal thank-you voice note</li>
+                </ul>
+                <button onclick="selectTier('Worship', 79)" 
+                        class="mt-8 w-full py-4 bg-[#D4AF37] hover:bg-[#C5A02E] text-[#0A0A0A] font-bold rounded-2xl transition-all">
+                    WORSHIP THE QUEEN
+                </button>
+            </div>
+
+            <!-- Custom -->
+            <div class="luxury-card p-8 rounded-3xl flex flex-col">
+                <div>
+                    <div class="text-sm uppercase tracking-widest text-[#D4AF37]">PRIVATE AUDIENCE</div>
+                    <div class="mt-2">
+                        <span class="text-3xl font-bold">Custom</span>
+                    </div>
+                </div>
+                <ul class="mt-8 space-y-3 flex-1 text-sm">
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Everything in The Worship</li>
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Private video call sessions</li>
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Unlimited custom requests (couple only)</li>
+                    <li class="flex gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i> Personalized content &amp; priority scheduling</li>
+                </ul>
+                <button onclick="selectTier('Private Audience', 'custom')" 
+                        class="mt-8 w-full py-4 border border-white/60 hover:bg-white hover:text-[#0A0A0A] font-medium rounded-2xl transition-all">
+                    REQUEST PRIVATE AUDIENCE
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="max-w-3xl mx-auto px-6 py-16 text-center">
+        <div class="luxury-card p-12 rounded-3xl">
+            <i class="fas fa-crown text-5xl gold-text mb-6"></i>
+            <h2 class="heading-serif text-5xl font-bold tracking-tighter mb-4">The Throne Awaits Its Worthy.</h2>
+            <p class="max-w-md mx-auto mb-8 text-[#AAA]">This is not content for everyone. It is a slow, deliberate journey into power, obsession, and devotion. Only those who prove themselves worthy will see everything.</p>
+            
+            <button onclick="document.getElementById('tiers').scrollIntoView({ behavior: 'smooth' })" 
+                    class="px-14 py-4 bg-[#D4AF37] hover:bg-[#C5A02E] text-[#0A0A0A] font-bold text-xl rounded-2xl inline-flex items-center gap-3 transition-all">
+                PROVE YOUR WORTH → ENTER THE PATH
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER / SAFETY -->
+    <footer class="border-t border-white/10 py-12 px-6 text-xs text-[#666]">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-y-8">
+            <div>
+                <div class="flex items-center gap-2 mb-3">
+                    <i class="fas fa-crown text-[#D4AF37]"></i>
+                    <span class="font-semibold tracking-tight">1N8BillionXXL</span>
+                </div>
+                <div class="max-w-xs">Faceless. Anonymous. Consensual adult fantasy between one couple only. All content is artistic, high-production, and released on our terms.</div>
+            </div>
+            
+            <div class="md:text-right space-y-1">
+                <div>18+ ONLY • ALL PARTICIPANTS ARE CONSENTING ADULTS</div>
+                <div>Strictly couple-only content. No third parties. Ever.</div>
+                <div class="pt-2">
+                    <a href="#" class="hover:text-white transition-colors">Privacy &amp; Anonymity Policy</a> • 
+                    <a href="#" class="hover:text-white transition-colors">Content Guidelines</a>
+                </div>
+                <div class="pt-4 text-[10px]">© 2026 1N8BillionXXL. All rights reserved. Your devotion is protected.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TEASER MODAL -->
+    <div id="teaserModal" onclick="if (event.target.id === 'teaserModal') hideTeaserModal()" class="hidden fixed inset-0 bg-black/90 z-[110] flex items-center justify-center p-6">
+        <div onclick="event.stopImmediatePropagation()" class="max-w-3xl w-full bg-[#111] rounded-3xl overflow-hidden border border-white/10">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <div class="uppercase tracking-[2px] text-xs gold-text">EXCLUSIVE TEASER</div>
+                        <div class="text-3xl font-semibold">The Queen’s First Tease</div>
+                    </div>
+                    <button onclick="hideTeaserModal()" class="text-3xl leading-none text-white/60 hover:text-white">×</button>
+                </div>
+                
+                <div class="aspect-video bg-black rounded-2xl flex items-center justify-center relative overflow-hidden">
+                    <div class="text-center">
+                        <i class="fas fa-play text-6xl text-white/30 mb-4"></i>
+                        <div class="text-sm">Your artistic 30-second teaser would play here.<br>Replace with your watermarked CapCut export.</div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col sm:flex-row gap-4">
+                    <button onclick="hideTeaserModal(); document.getElementById('tiers').scrollIntoView({ behavior: 'smooth' })" 
+                            class="flex-1 py-3.5 bg-[#D4AF37] hover:bg-[#C5A02E] text-[#0A0A0A] font-bold rounded-2xl">UNLOCK FULL EXPERIENCE — START WITH THE GAZE</button>
+                    <button onclick="hideTeaserModal()" class="flex-1 py-3.5 border border-white/40 hover:bg-white/5 rounded-2xl">MAYBE LATER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent-gold', '#D4AF37');
+        }
+        
+        // Age Gate
+        function enterThrone() {
+            const gate = document.getElementById('ageGate');
+            gate.style.transition = 'opacity 0.4s ease';
+            gate.style.opacity = '0';
+            setTimeout(() => {
+                gate.style.display = 'none';
+                // Optional: subtle welcome animation
+                document.body.style.transition = 'background 1.5s ease';
+            }, 400);
+        }
+        
+        // Gallery Data (artistic & on-brand)
+        const galleryItems = [
+            { id: 1, category: 'throne', title: 'Throne Power Shot', desc: 'Dominant presence on the velvet throne. Low angle. Commanding.', img: 'https://picsum.photos/id/1011/600/800' },
+            { id: 2, category: 'measurement', title: 'Measurement Tease', desc: 'Elegant artistic comparison. The 60cm reality in candlelight.', img: 'https://picsum.photos/id/1005/600/800' },
+            { id: 3, category: 'couple', title: 'Couple Silhouette', desc: 'Her hands. His presence. Power exchange in shadow.', img: 'https://picsum.photos/id/1009/600/800' },
+            { id: 4, category: 'throne', title: 'Empty Throne Anticipation', desc: 'The throne waits. The Queen approaches. Tension builds.', img: 'https://picsum.photos/id/160/600/800' },
+            { id: 5, category: 'measurement', title: 'Golden Hour Scale', desc: 'Side profile. Natural light. The full weight revealed slowly.', img: 'https://picsum.photos/id/201/600/800' },
+            { id: 6, category: 'couple', title: 'Reaction Close-Up', desc: 'Her body language says everything. Face hidden. Pure response.', img: 'https://picsum.photos/id/251/600/800' },
+            { id: 7, category: 'throne', title: 'King on Throne', desc: 'Full power. Dark lighting. Gold accents. Unmistakable presence.', img: 'https://picsum.photos/id/1016/600/800' },
+            { id: 8, category: 'measurement', title: 'Luxurious Tease', desc: 'Rich textures. Slow reveal. The obsession begins here.', img: 'https://picsum.photos/id/29/600/800' }
+        ];
+        
+        function renderGallery(filter = 'all') {
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = '';
+            
+            const filtered = filter === 'all' ? galleryItems : galleryItems.filter(item => item.category === filter);
+            
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = `gallery-card luxury-card rounded-3xl overflow-hidden cursor-pointer group`;
+                card.innerHTML = `
+                    <div class="relative overflow-hidden aspect-[4/5]">
+                        <img src="${item.img}" class="gallery-img w-full h-full object-cover" alt="${item.title} — artistic faceless throne scene">
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/80"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <div class="text-xs uppercase tracking-widest text-[#D4AF37] mb-1">${item.category.toUpperCase()}</div>
+                            <div class="font-semibold text-2xl leading-tight">${item.title}</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-[#AAA] line-clamp-2">${item.desc}</p>
+                        <div class="mt-4 flex items-center justify-between text-xs">
+                            <span class="text-[#D4AF37]">VIEW FULL IN TIER</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                `;
+                
+                card.onclick = () => showGalleryModal(item);
+                grid.appendChild(card);
+            });
+        }
+        
+        function filterGallery(category) {
+            // Update active button styles
+            document.querySelectorAll('#gallery-filters button').forEach(btn => {
+                btn.classList.remove('active-filter', 'border-[#D4AF37]', 'text-[#D4AF37]');
+                btn.classList.add('border-white/30');
+                if ((category === 'all' && btn.textContent === 'All') || 
+                    (category === 'measurement' && btn.textContent.includes('Measurement')) ||
+                    (category === 'couple' && btn.textContent.includes('Couple')) ||
+                    (category === 'throne' && btn.textContent.includes('Throne'))) {
+                    btn.classList.add('active-filter', 'border-[#D4AF37]', 'text-[#D4AF37]');
+                    btn.classList.remove('border-white/30');
+                }
+            });
+            
+            renderGallery(category);
+        }
+        
+        function showGalleryModal(item) {
+            const modal = document.createElement('div');
+            modal.className = `fixed inset-0 bg-black/95 z-[120] flex items-center justify-center p-6`;
+            modal.innerHTML = `
+                <div onclick="event.target.remove()" class="absolute inset-0"></div>
+                <div onclick="event.stopImmediatePropagation()" class="relative max-w-3xl w-full luxury-card rounded-3xl overflow-hidden">
+                    <img src="${item.img}" class="w-full aspect-video object-cover" alt="${item.title}">
+                    <div class="p-8">
+                        <div class="uppercase text-xs tracking-[2px] gold-text mb-1">${item.category}</div>
+                        <h3 class="text-4xl font-semibold tracking-tight">${item.title}</h3>
+                        <p class="mt-4 text-lg text-[#CCC]">${item.desc}</p>
+                        
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                            <button onclick="this.closest('.fixed').remove(); document.getElementById('tiers').scrollIntoView({ behavior: 'smooth' })" 
+                                    class="flex-1 py-3.5 bg-[#D4AF37] text-[#0A0A0A] font-bold rounded-2xl">UNLOCK FULL GALLERY IN WORSHIP TIER</button>
+                            <button onclick="this.closest('.fixed').remove()" class="flex-1 py-3.5 border border-white/40 rounded-2xl">CLOSE</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        // Tier selection
+        function selectTier(tierName, price) {
+            const modal = document.createElement('div');
+            modal.className = `fixed inset-0 bg-black/90 z-[120] flex items-center justify-center p-6`;
+            
+            let content = '';
+            if (price === 'custom') {
+                content = `
+                    <div class="max-w-lg w-full luxury-card p-8 rounded-3xl">
+                        <h3 class="text-3xl font-semibold">Private Audience Request</h3>
+                        <p class="mt-2 text-[#AAA]">Tell the Queen exactly what you desire. All requests are couple-only and handled with the highest discretion.</p>
+                        
+                        <form class="mt-8 space-y-5" onsubmit="submitCustomRequest(event)">
+                            <div>
+                                <label class="text-xs tracking-widest block mb-1.5">YOUR NAME / ALIAS</label>
+                                <input type="text" class="w-full bg-black border border-white/20 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#D4AF37]" placeholder="Devoted Subject" required>
+                            </div>
+                            <div>
+                                <label class="text-xs tracking-widest block mb-1.5">WHAT DO YOU CRAVE?</label>
+                                <textarea class="w-full bg-black border border-white/20 rounded-3xl px-5 py-4 text-sm h-32 resize-y focus:outline-none focus:border-[#D4AF37]" placeholder="Describe your fantasy request in detail..." required></textarea>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-xs tracking-widest block mb-1.5">BUDGET RANGE</label>
+                                    <input type="text" class="w-full bg-black border border-white/20 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#D4AF37]" placeholder="$500+" required>
+                                </div>
+                                <div>
+                                    <label class="text-xs tracking-widest block mb-1.5">PREFERRED DATE</label>
+                                    <input type="text" class="w-full bg-black border border-white/20 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#D4AF37]" placeholder="Within 2 weeks">
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="w-full mt-4 py-4 bg-[#D4AF37] hover:bg-[#C5A02E] text-[#0A0A0A] font-bold rounded-2xl">SUBMIT REQUEST TO THE QUEEN</button>
+                        </form>
+                    </div>
+                `;
+            } else {
+                content = `
+                    <div class="max-w-md w-full luxury-card p-8 rounded-3xl text-center">
+                        <div class="text-[#D4AF37] text-sm tracking-widest">YOU HAVE CHOSEN</div>
+                        <div class="text-4xl font-bold mt-1">${tierName}</div>
+                        <div class="mt-1 text-5xl font-semibold">$${price}<span class="text-xl align-super">/mo</span></div>
+                        
+                        <div class="my-8 text-sm text-[#AAA]">You will be redirected to our secure checkout. All payments are processed discreetly. Your devotion remains private.</div>
+                        
+                        <button onclick="simulateCheckout('${tierName}', ${price}, this)" class="w-full py-4 bg-[#D4AF37] hover:bg-[#C5A02E] text-[#0A0A0A] font-bold rounded-2xl">COMPLETE SECURE CHECKOUT</button>
+                        
+                        <button onclick="this.closest('.fixed').remove()" class="mt-4 text-xs text-[#666] hover:text-white">Maybe later</button>
+                    </div>
+                `;
+            }
+            
+            modal.innerHTML = content;
+            document.body.appendChild(modal);
+        }
+        
+        function simulateCheckout(tier, price, btn) {
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> PROCESSING YOUR DEVOTION...`;
+            setTimeout(() => {
+                btn.closest('.fixed').remove();
+                const success = document.createElement('div');
+                success.className = `fixed bottom-8 left-1/2 -translate-x-1/2 bg-[#111] border border-[#D4AF37] px-8 py-4 rounded-2xl flex items-center gap-3 shadow-2xl`;
+                success.innerHTML = `
+                    <i class="fas fa-check-circle text-[#D4AF37]"></i>
+                    <div>Welcome to the ${tier} tier, worthy one. Check your email for access.</div>
+                `;
+                document.body.appendChild(success);
+                setTimeout(() => success.remove(), 4500);
+            }, 1800);
+        }
+        
+        function submitCustomRequest(e) {
+            e.preventDefault();
+            const modal = e.target.closest('.fixed');
+            modal.innerHTML = `
+                <div class="max-w-md w-full luxury-card p-8 rounded-3xl text-center">
+                    <i class="fas fa-check-circle text-6xl text-[#D4AF37] mb-6"></i>
+                    <h3 class="text-3xl">Request Received</h3>
+                    <p class="mt-3 text-[#AAA]">The Queen has been notified. You will receive a private response within 48 hours. Your discretion is our priority.</p>
+                    <button onclick="this.closest('.fixed').remove()" class="mt-8 px-10 py-3 border border-white/40 rounded-2xl">CLOSE</button>
+                </div>
+            `;
+        }
+        
+        // Teaser modal
+        function showTeaserModal() {
+            document.getElementById('teaserModal').classList.remove('hidden');
+            document.getElementById('teaserModal').classList.add('flex');
+        }
+        
+        function hideTeaserModal() {
+            const m = document.getElementById('teaserModal');
+            m.classList.remove('flex');
+            m.classList.add('hidden');
+        }
+        
+        // Simple audio log simulation (replace with real ElevenLabs links later)
+        function playAudioLog(chapter) {
+            const msg = document.createElement('div');
+            msg.className = `fixed bottom-6 right-6 bg-[#111] border border-[#D4AF37] px-6 py-4 rounded-2xl flex items-center gap-3 shadow-xl z-[200]`;
+            msg.innerHTML = `
+                <i class="fas fa-headphones text-[#D4AF37]"></i>
+                <div>Playing Audio Log ${chapter} — Replace with your ElevenLabs export</div>
+            `;
+            document.body.appendChild(msg);
+            setTimeout(() => msg.remove(), 3200);
+        }
+        
+        // Initialize everything
+        function initializeSite() {
+            initializeTailwind();
+            
+            // Render initial gallery
+            renderGallery('all');
+            
+            // Make sure age gate is visible on first load (remove this line in production if you want it always open)
+            // document.getElementById('ageGate').style.display = 'flex';
+            
+            // Keyboard escape for modals
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    const openModals = document.querySelectorAll('.fixed.inset-0');
+                    if (openModals.length > 0) openModals[openModals.length - 1].remove();
+                }
+            });
+            
+            // Optional: Auto-hide age gate for testing (remove in real deploy)
+            // setTimeout(() => { if (document.getElementById('ageGate')) document.getElementById('ageGate').style.display = 'none'; }, 800);
+            
+            console.log('%c[1N8BillionXXL] Throne website initialized. Ready for Vercel deploy.', 'color:#D4AF37');
+        }
+        
+        window.onload = initializeSite;
+    </script>
+</body>
+</html>
